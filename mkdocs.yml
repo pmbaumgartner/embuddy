@@ -1,4 +1,4 @@
-site_name: EmBuddy 1
+site_name: EmBuddy Docs
 
 theme:
   name: material
@@ -8,7 +8,7 @@ plugins:
   - mkdocstrings
 
 nav:
-  - EmBuddy: index.md
+  - Usage: index.md
   - API Reference: api.md
 
 markdown_extensions:
