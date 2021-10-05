@@ -1,0 +1,1345 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.1">
+    
+    
+      
+        <title>API Reference - EmBuddy 1</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1c75ef36.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="EmBuddy 1" class="md-header__button md-logo" aria-label="EmBuddy 1" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EmBuddy 1
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="EmBuddy 1" class="md-nav__button md-logo" aria-label="EmBuddy 1" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    EmBuddy 1
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        EmBuddy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          API Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        API Reference
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#embuddy-core" class="md-nav__link">
+    EmBuddy Core
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.embuddy.core.EmBuddy" class="md-nav__link">
+    src.embuddy.core.EmBuddy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.embuddy.core.EmBuddy.__call__" class="md-nav__link">
+    __call__()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.embuddy.core.EmBuddy.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.embuddy.core.EmBuddy.build_ann_index" class="md-nav__link">
+    build_ann_index()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.embuddy.core.EmBuddy.embed" class="md-nav__link">
+    embed()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.embuddy.core.EmBuddy.load" class="md-nav__link">
+    load()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.embuddy.core.EmBuddy.nearest_neighbors" class="md-nav__link">
+    nearest_neighbors()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.embuddy.core.EmBuddy.nearest_neighbors_vector" class="md-nav__link">
+    nearest_neighbors_vector()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.embuddy.core.EmBuddy.save" class="md-nav__link">
+    save()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errors" class="md-nav__link">
+    Errors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.embuddy.errors" class="md-nav__link">
+    src.embuddy.errors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.embuddy.errors.IndexNotBuiltError" class="md-nav__link">
+    IndexNotBuiltError
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.embuddy.errors.NNDescentHyperplaneError" class="md-nav__link">
+    NNDescentHyperplaneError
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#embuddy-core" class="md-nav__link">
+    EmBuddy Core
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.embuddy.core.EmBuddy" class="md-nav__link">
+    src.embuddy.core.EmBuddy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.embuddy.core.EmBuddy.__call__" class="md-nav__link">
+    __call__()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.embuddy.core.EmBuddy.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.embuddy.core.EmBuddy.build_ann_index" class="md-nav__link">
+    build_ann_index()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.embuddy.core.EmBuddy.embed" class="md-nav__link">
+    embed()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.embuddy.core.EmBuddy.load" class="md-nav__link">
+    load()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.embuddy.core.EmBuddy.nearest_neighbors" class="md-nav__link">
+    nearest_neighbors()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.embuddy.core.EmBuddy.nearest_neighbors_vector" class="md-nav__link">
+    nearest_neighbors_vector()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.embuddy.core.EmBuddy.save" class="md-nav__link">
+    save()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errors" class="md-nav__link">
+    Errors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.embuddy.errors" class="md-nav__link">
+    src.embuddy.errors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.embuddy.errors.IndexNotBuiltError" class="md-nav__link">
+    IndexNotBuiltError
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#src.embuddy.errors.NNDescentHyperplaneError" class="md-nav__link">
+    NNDescentHyperplaneError
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="api-reference">API Reference</h1>
+<h2 id="embuddy-core">EmBuddy Core</h2>
+
+
+  <div class="doc doc-object doc-class">
+
+<a id="src.embuddy.core.EmBuddy"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h2 id="src.embuddy.core.EmBuddy.__call__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">docs</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Shortcut for <a href="#src.embuddy.core.EmBuddy.embed">EmBuddy.embed</a></p>
+
+        <details class="quote">
+          <summary>Source code in <code>embuddy/core.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">docs</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span> <span class="n">cache</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Shortcut for [EmBuddy.embed][src.embuddy.core.EmBuddy.embed]&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span><span class="p">(</span><span class="n">docs</span><span class="o">=</span><span class="n">docs</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h2 id="src.embuddy.core.EmBuddy.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model_name</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>A buddy for using text embeddings.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>model_name</code></td>
+        <td><code>str</code></td>
+        <td><p>SentenceTransformer model used for embedding</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>embuddy/core.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A buddy for using text embeddings.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        model_name (str): SentenceTransformer model used for embedding</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">model_name</span> <span class="o">=</span> <span class="n">model_name</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">:</span> <span class="n">SentenceTransformer</span> <span class="o">=</span> <span class="n">SentenceTransformer</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">doc_cache</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">embedding_cache</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span>
+        <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">get_sentence_embedding_dimension</span><span class="p">())</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ann</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">NNDescent</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_last_built_len</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h2 id="src.embuddy.core.EmBuddy.build_ann_index" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">build_ann_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nndescent_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Builds the Approximate Nearest Neighbors (ANN) index</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>nndescent_kwargs</code></td>
+        <td><code>Optional[Dict[str, Any]]</code></td>
+        <td><p>Optional kwargs to pass to NNDescent. Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Exceptions:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>NNDescentHyperplaneError</code></td>
+        <td><p>If ANN can't be built due to small data.</p></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>embuddy/core.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">build_ann_index</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">nndescent_kwargs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Builds the Approximate Nearest Neighbors (ANN) index</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        nndescent_kwargs (Optional[Dict[str, Any]], optional): Optional kwargs to pass to NNDescent. Defaults to None.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        NNDescentHyperplaneError: If ANN can&#39;t be built due to small data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">nndescent_kwargs</span> <span class="o">=</span> <span class="n">_build_nndescent_kwargs_dict</span><span class="p">(</span><span class="n">nndescent_kwargs</span><span class="p">)</span>
+    <span class="n">nndescent_kwargs</span><span class="p">[</span><span class="s2">&quot;n_neighbors&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="mi">10</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">doc_cache</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">60</span> <span class="k">else</span> <span class="n">nndescent_kwargs</span><span class="p">[</span><span class="s2">&quot;n_neighbors&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">NNDescent</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">embedding_cache</span><span class="p">,</span> <span class="o">**</span><span class="n">nndescent_kwargs</span><span class="p">)</span>
+        <span class="n">index</span><span class="o">.</span><span class="n">prepare</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ann</span> <span class="o">=</span> <span class="n">index</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_built_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">doc_cache</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;hyperplane&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">NNDescentHyperplaneError</span><span class="p">(</span>
+                <span class="s2">&quot;NNDescent cannot build index.&quot;</span>
+                <span class="s2">&quot; Usually this means data is too small -&quot;</span>
+                <span class="s2">&quot; try adding more embeddings and build again.&quot;</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">e</span>  <span class="c1"># pragma: no cover</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h2 id="src.embuddy.core.EmBuddy.embed" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">embed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">docs</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Embed documents.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>docs</code></td>
+        <td><code>Union[str, List[str]]</code></td>
+        <td><p>A string or list of strings to embed</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>cache</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to cache embedding results. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>np.ndarray</code></td>
+      <td><p>Embeddings of input documents.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>embuddy/core.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">embed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">docs</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span> <span class="n">cache</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Embed documents.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        docs (Union[str, List[str]]): A string or list of strings to embed</span>
+<span class="sd">        cache (bool, optional): Whether to cache embedding results. Defaults to True.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        np.ndarray: Embeddings of input documents.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">docs</span> <span class="o">=</span> <span class="p">[</span><span class="n">docs</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">cache</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span>
+            <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">docs</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">get_sentence_embedding_dimension</span><span class="p">()),</span>
+            <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">uncached_docs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">docs</span> <span class="k">if</span> <span class="n">d</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">doc_cache</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="n">uncached_docs</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">doc_cache</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">uncached_docs</span><span class="p">)</span>
+            <span class="n">uncached_embeddings</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+                <span class="n">uncached_docs</span><span class="p">,</span> <span class="n">convert_to_numpy</span><span class="o">=</span><span class="kc">True</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">embedding_cache</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">embedding_cache</span><span class="p">,</span> <span class="n">uncached_embeddings</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">doc</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">docs</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">uncached_docs</span><span class="p">:</span>
+                    <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">uncached_embeddings</span><span class="p">[</span><span class="n">uncached_docs</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">doc</span><span class="p">)]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">embedding_cache</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">doc_cache</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">doc</span><span class="p">)]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">doc</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">docs</span><span class="p">):</span>
+                <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">embedding_cache</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">doc_cache</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">doc</span><span class="p">)]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h2 id="src.embuddy.core.EmBuddy.load" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
+  </span>
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Load a previously saved EmBuddy from disk</p>
+
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>EmBuddy</code></td>
+      <td><p>A loaded instance of Embuddy</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>embuddy/core.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;EmBuddy&quot;</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Load a previously saved EmBuddy from disk</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        EmBuddy: A loaded instance of Embuddy</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+    <span class="n">g</span> <span class="o">=</span> <span class="n">zarr</span><span class="o">.</span><span class="n">open_group</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+    <span class="n">model_name</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;model_name&quot;</span><span class="p">]</span>
+    <span class="n">embuddy</span> <span class="o">=</span> <span class="n">EmBuddy</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+    <span class="n">embuddy</span><span class="o">.</span><span class="n">doc_cache</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="s2">&quot;docs&quot;</span><span class="p">])</span>
+    <span class="n">embuddy</span><span class="o">.</span><span class="n">embedding_cache</span> <span class="o">=</span> <span class="n">g</span><span class="p">[</span><span class="s2">&quot;embeddings&quot;</span><span class="p">][:]</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">path</span> <span class="o">/</span> <span class="s2">&quot;ann_index.zstd&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+        <span class="n">embuddy</span><span class="o">.</span><span class="n">ann</span> <span class="o">=</span> <span class="n">joblib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span> <span class="o">/</span> <span class="s2">&quot;ann_index.zstd&quot;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">embuddy</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h2 id="src.embuddy.core.EmBuddy.nearest_neighbors" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">nearest_neighbors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">docs</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Find the nearest neighbors (i.e. most similar) from
+ cached docs for the input documents.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>docs</code></td>
+        <td><code>Union[str, List[str]]</code></td>
+        <td><p>Docs to find nearest neighbors of.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>k</code></td>
+        <td><code>int</code></td>
+        <td><p>Number of nearest neighbors. Defaults to 10.</p></td>
+        <td><code>10</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Exceptions:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>IndexNotBuiltError</code></td>
+        <td><p>If <code>build_ann_index</code> has not been run</p></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>List[List[Tuple[int, str, float]]]</code></td>
+      <td><p>For each document, a list of tuples
+containing the document index, document string, and distance for the nearest
+neighbors for each input doc. Sorted by distance.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>embuddy/core.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">nearest_neighbors</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">docs</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]]:</span>
+    <span class="sd">&quot;&quot;&quot;Find the nearest neighbors (i.e. most similar) from</span>
+<span class="sd">     cached docs for the input documents.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        docs (Union[str, List[str]]): Docs to find nearest neighbors of.</span>
+<span class="sd">        k (int, optional): Number of nearest neighbors. Defaults to 10.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        IndexNotBuiltError: If `build_ann_index` has not been run</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List[List[Tuple[int, str, float]]]: For each document, a list of tuples</span>
+<span class="sd">        containing the document index, document string, and distance for the nearest</span>
+<span class="sd">        neighbors for each input doc. Sorted by distance.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ann</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ann</span><span class="p">,</span> <span class="n">NNDescent</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">IndexNotBuiltError</span><span class="p">(</span>
+            <span class="s2">&quot;Approximate Nearest Neighbors index not built.&quot;</span>
+            <span class="s2">&quot; Call `build_ann_index` before using this method.&quot;</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_built_len</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">doc_cache</span><span class="p">):</span>
+        <span class="n">warn</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">doc_cache</span><span class="p">)</span><span class="si">}</span><span class="s2"> embeddings exist in cache, &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;but ANN was last built with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_last_built_len</span><span class="si">}</span><span class="s2"> embeddings. &quot;</span>
+            <span class="s2">&quot;You are not querying all embeddings. You can rebuild the ANN &quot;</span>
+            <span class="s2">&quot;index with `build_ann_index`.&quot;</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">docs</span> <span class="o">=</span> <span class="p">[</span><span class="n">docs</span><span class="p">]</span>
+
+    <span class="n">query_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">embed</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">neighbors</span><span class="p">,</span> <span class="n">distances</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ann</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">query_data</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">doc</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">docs</span><span class="p">):</span>
+        <span class="n">neighbor_ix</span> <span class="o">=</span> <span class="n">neighbors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">neighbor_docs</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">doc_cache</span><span class="p">[</span><span class="n">ix</span><span class="p">]</span> <span class="k">for</span> <span class="n">ix</span> <span class="ow">in</span> <span class="n">neighbor_ix</span><span class="p">]</span>
+        <span class="n">neighbor_dist</span> <span class="o">=</span> <span class="n">distances</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">doc_result</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">ix</span><span class="p">,</span> <span class="n">doc</span><span class="p">,</span> <span class="n">dist</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">neighbor_ix</span><span class="p">,</span> <span class="n">neighbor_docs</span><span class="p">,</span> <span class="n">neighbor_dist</span><span class="p">):</span>
+            <span class="n">doc_result</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">ix</span><span class="p">,</span> <span class="n">doc</span><span class="p">,</span> <span class="n">dist</span><span class="p">))</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">doc_result</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h2 id="src.embuddy.core.EmBuddy.nearest_neighbors_vector" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">nearest_neighbors_vector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_vector</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Find the nearest neighbors (i.e. most similar) from
+ cached docs of the input vectors.</p>
+<p>You can use this to find similar documents to an arbitrary vector --
+e.g. a vector for a document that doesn't exist, or the mean vector for
+a collection of documents.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>query_vector</code></td>
+        <td><code>np.ndarray</code></td>
+        <td><p>An array of vectors
+to find the nearest neighbors for.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>k</code></td>
+        <td><code>int</code></td>
+        <td><p>Number of nearest neighbors. Defaults to 10.</p></td>
+        <td><code>10</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Exceptions:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>IndexNotBuiltError</code></td>
+        <td><p>If <code>build_ann_index</code> has not been run</p></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>List[List[Tuple[int, str, float]]]</code></td>
+      <td><p>For each vector, a list of tuples
+containing the document index, document string, and distance for the nearest
+neighbors for each input doc. Sorted by distance.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>embuddy/core.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">nearest_neighbors_vector</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">query_vector</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]]:</span>
+    <span class="sd">&quot;&quot;&quot;Find the nearest neighbors (i.e. most similar) from</span>
+<span class="sd">     cached docs of the input vectors.</span>
+
+<span class="sd">    You can use this to find similar documents to an arbitrary vector --</span>
+<span class="sd">    e.g. a vector for a document that doesn&#39;t exist, or the mean vector for</span>
+<span class="sd">    a collection of documents.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        query_vector (np.ndarray): An array of vectors</span>
+<span class="sd">            to find the nearest neighbors for.</span>
+<span class="sd">        k (int, optional): Number of nearest neighbors. Defaults to 10.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        IndexNotBuiltError: If `build_ann_index` has not been run</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List[List[Tuple[int, str, float]]]: For each vector, a list of tuples</span>
+<span class="sd">        containing the document index, document string, and distance for the nearest</span>
+<span class="sd">        neighbors for each input doc. Sorted by distance.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ann</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ann</span><span class="p">,</span> <span class="n">NNDescent</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">IndexNotBuiltError</span><span class="p">(</span>
+            <span class="s2">&quot;Approximate Nearest Neighbors index not built.&quot;</span>
+            <span class="s2">&quot; Call `build_ann_index` before using this method.&quot;</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_built_len</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">doc_cache</span><span class="p">):</span>
+        <span class="n">warn</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">doc_cache</span><span class="p">)</span><span class="si">}</span><span class="s2"> embeddings exist in cache, &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;but ANN was last built with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_last_built_len</span><span class="si">}</span><span class="s2"> embeddings. &quot;</span>
+            <span class="s2">&quot;You are not querying all embeddings. You can rebuild the ANN &quot;</span>
+            <span class="s2">&quot;index with `build_ann_index`.&quot;</span>
+        <span class="p">)</span>
+    <span class="n">query_vector</span> <span class="o">=</span> <span class="n">query_vector</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">neighbors</span><span class="p">,</span> <span class="n">distances</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ann</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">query_vector</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">doc</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">query_vector</span><span class="p">):</span>
+        <span class="n">neighbor_ix</span> <span class="o">=</span> <span class="n">neighbors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">neighbor_docs</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">doc_cache</span><span class="p">[</span><span class="n">ix</span><span class="p">]</span> <span class="k">for</span> <span class="n">ix</span> <span class="ow">in</span> <span class="n">neighbor_ix</span><span class="p">]</span>
+        <span class="n">neighbor_dist</span> <span class="o">=</span> <span class="n">distances</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">doc_result</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">ix</span><span class="p">,</span> <span class="n">doc</span><span class="p">,</span> <span class="n">dist</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">neighbor_ix</span><span class="p">,</span> <span class="n">neighbor_docs</span><span class="p">,</span> <span class="n">neighbor_dist</span><span class="p">):</span>
+            <span class="n">doc_result</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">ix</span><span class="p">,</span> <span class="n">doc</span><span class="p">,</span> <span class="n">dist</span><span class="p">))</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">doc_result</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h2 id="src.embuddy.core.EmBuddy.save" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Save the current state of EmBuddy to disk.</p>
+<p>Embeddings and Docs arrays are saved and compressed using zarr.
+The ANN Index, if it exists, is saved using joblib with <code>zstd</code> compression.</p>
+<p>Note that this is a directory containing the required data.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>path</code></td>
+        <td><code>Union[str, Path]</code></td>
+        <td><p>Location to save EmBuddy data</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>overwrite</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to overwrite existing data. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>zarr.Group</code></td>
+      <td><p>Group object containing an <code>embedding</code> array of the
+embeddings and a <code>docs</code> array of the docments</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>embuddy/core.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">overwrite</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">zarr</span><span class="o">.</span><span class="n">Group</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Save the current state of EmBuddy to disk.</span>
+
+<span class="sd">    Embeddings and Docs arrays are saved and compressed using zarr.</span>
+<span class="sd">    The ANN Index, if it exists, is saved using joblib with `zstd` compression.</span>
+
+<span class="sd">    Note that this is a directory containing the required data.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path (Union[str, Path]): Location to save EmBuddy data</span>
+<span class="sd">        overwrite (bool, optional): Whether to overwrite existing data. Defaults to True.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        zarr.Group: Group object containing an `embedding` array of the</span>
+<span class="sd">        embeddings and a `docs` array of the docments</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+    <span class="n">g</span> <span class="o">=</span> <span class="n">zarr</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="n">store</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">overwrite</span><span class="o">=</span><span class="n">overwrite</span><span class="p">)</span>
+    <span class="n">g</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;model_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_name</span>
+    <span class="n">g</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;embeddings&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">embedding_cache</span><span class="p">)</span>
+    <span class="n">g</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;docs&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">doc_cache</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ann</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ann</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">path</span> <span class="o">/</span> <span class="s2">&quot;ann_index.zstd&quot;</span><span class="p">),</span> <span class="n">compress</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;zstd&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">g</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+<h2 id="errors">Errors</h2>
+
+
+  <div class="doc doc-object doc-module">
+
+<a id="src.embuddy.errors"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.embuddy.errors.IndexNotBuiltError" class="doc doc-heading">
+        <code>
+IndexNotBuiltError            (<span title="ValueError">ValueError</span>, <span title="AttributeError">AttributeError</span>)
+        </code>
+
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Exception raised when attempting to find nearest neighbors
+before the ANN index is built.</p>
+
+
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h2 id="src.embuddy.errors.NNDescentHyperplaneError" class="doc doc-heading">
+        <code>
+NNDescentHyperplaneError            (<span title="Exception">Exception</span>)
+        </code>
+
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Exception raised when NNDescent can't find a hyperplane.</p>
+<p>Usually occurs with small data.</p>
+
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: EmBuddy" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              EmBuddy
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.e99e714c.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c7d1b464.min.js"></script>
+      
+    
+  </body>
+</html>
