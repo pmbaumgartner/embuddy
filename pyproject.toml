@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "embuddy"
-version = "0.1.0"
+version = "0.1.1"
 description = "embuddy is a package helps with using text embeddings for local data analysis."
 authors = ["Peter Baumgartner"]
 readme = "README.md"
@@ -13,6 +13,7 @@ pynndescent = "^0.5.4"
 joblib = "^1.0.1"
 joblib-zstd = "^0.1.1"
 numba = "^0.54.0"
+umap-learn = "^0.5.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
@@ -30,6 +31,7 @@ mkdocstrings = "^0.16.2"
 pandas = "1.1"
 Pygments = "^2.10.0"
 pymdown-extensions = "^9.0"
+pyre-check = "^0.9.8"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

@@ -129,3 +129,12 @@ emb.save("myembeddings.emb")
 my_old_emb = EmBuddy.load("myembeddings.emb")
 my_old_emb.nearest_neighbors("I made even better pudding!")
 ```
+
+**Project to 2D with UMAP**
+
+```python
+umap_embeddings = emb.build_umap()
+
+my_old_emb = EmBuddy.load("myembeddings.emb")
+umap_embeddings_loaded = my_old_emb.umap_embeddings
+```

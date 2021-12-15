@@ -1,5 +1,8 @@
 from src.embuddy import __version__, EmBuddy
-from src.embuddy.errors import IndexNotBuiltError, NNDescentHyperplaneError
+from src.embuddy.errors import (
+    IndexNotBuiltError,
+    NNDescentHyperplaneError,
+)
 import numpy as np
 import pytest
 
@@ -10,7 +13,7 @@ def embuddy_sm():
 
 
 def test_version():
-    assert __version__ == "0.1.0"
+    assert __version__ == "0.1.1"
 
 
 def test_array(embuddy_sm):
@@ -142,3 +145,17 @@ def test_stale_index_warning(faker, embuddy_sm):
         embuddy_sm.nearest_neighbors("Some text")
     with pytest.warns(UserWarning):
         embuddy_sm.nearest_neighbors_vector(embuddy_sm.embedding_cache[0])
+
+
+def test_umap_persist(tmp_path, faker, embuddy_sm):
+    texts = faker.texts(nb_texts=61, max_nb_chars=100)
+    embuddy_sm.embed(texts)
+    embuddy_sm.build_umap()
+    umap1 = embuddy_sm.umap_embeddings
+
+    path = tmp_path / "test_embeddings.emb"
+    embuddy_sm.save(path)
+
+    emb2 = EmBuddy.load(path)
+    umap2 = emb2.umap_embeddings
+    assert np.array_equal(umap1, umap2)

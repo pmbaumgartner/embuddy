@@ -8,6 +8,7 @@ import numpy as np
 import zarr
 from pynndescent import NNDescent
 from sentence_transformers import SentenceTransformer
+from umap import UMAP
 
 from .errors import IndexNotBuiltError, NNDescentHyperplaneError
 
@@ -28,6 +29,7 @@ class EmBuddy:
             shape=(0, self.model.get_sentence_embedding_dimension())
         )
         self.ann: Optional[NNDescent] = None
+        self.umap_embeddings: Optional[np.ndarray] = None
         self._last_built_len: int = 0
 
     def embed(self, docs: Union[str, List[str]], cache: bool = True) -> np.ndarray:
@@ -96,6 +98,8 @@ class EmBuddy:
         g.attrs["model_name"] = self.model_name
         g.create_dataset(name="embeddings", data=self.embedding_cache)
         g.create_dataset(name="docs", data=self.doc_cache, dtype=str)
+        if self.umap_embeddings is not None:
+            g.create_dataset(name="umap_embeddings", data=self.umap_embeddings)
         if self.ann is not None:
             joblib.dump(self.ann, str(path / "ann_index.zstd"), compress=("zstd", 5))
         return g
@@ -115,6 +119,9 @@ class EmBuddy:
         embuddy = EmBuddy(model_name)
         embuddy.doc_cache = list(g["docs"])
         embuddy.embedding_cache = g["embeddings"][:]
+        umap_check = g.get("umap_embeddings")
+        if umap_check:
+            embuddy.umap_embeddings = g["umap_embeddings"]
         if (path / "ann_index.zstd").exists():
             embuddy.ann = joblib.load(str(path / "ann_index.zstd"))
         return embuddy
@@ -246,6 +253,37 @@ class EmBuddy:
             result.append(doc_result)
         return result
 
+    def build_umap(
+        self, umap_kwargs: Optional[Dict[str, Any]] = None, return_array=True
+    ) -> Optional[np.ndarray]:
+        """Builds a 2D projection of the embeddings with UMAP
+        default settings except metric="cosine".
+
+        Args:
+            umap_kwargs (Optional[Dict[str, Any]], optional): Custom UMAP kwargs. Defaults to None.
+            return_array (bool, optional): Return the UMAP array. Defaults to True.
+
+        """
+        umap_kwargs = _build_umap_kwargs_dict(umap_kwargs)
+        umap = UMAP(**umap_kwargs)
+        self.umap_embeddings = umap.fit_transform(self.embedding_cache)
+        if return_array:
+            return self.umap_embeddings
+        return None
+
+
+def _build_umap_kwargs_dict(
+    umap_kwargs: Optional[Dict[str, Any]] = None
+) -> Dict[str, Any]:
+    defaults = {
+        "n_neighbors": 15,
+        "n_components": 2,
+        "random_state": 1234,
+        "metric": "cosine",
+        "verbose": True,
+    }
+    return defaults if umap_kwargs is None else {**defaults, **umap_kwargs}
+
 
 def _build_nndescent_kwargs_dict(
     nndescent_kwargs: Optional[Dict[str, Any]]
@@ -258,33 +296,10 @@ def _build_nndescent_kwargs_dict(
     Returns:
         Dict[str, Any]: NNDescent default kwargs, if not set in the input.
     """
-    if nndescent_kwargs is None:
-        nndescent_kwargs = {
-            "compressed": True,
-            "n_neighbors": 30,
-            "random_state": 1234,
-            "metric": "cosine",
-        }
-    else:
-        nndescent_kwargs["compressed"] = (
-            True
-            if "compressed" not in nndescent_kwargs
-            else nndescent_kwargs["compressed"]
-        )
-        nndescent_kwargs["n_neighbors"] = (
-            30
-            if "n_neighbors" not in nndescent_kwargs
-            else nndescent_kwargs["n_neighbors"]
-        )
-        nndescent_kwargs["random_state"] = (
-            1234
-            if "random_state" not in nndescent_kwargs
-            else nndescent_kwargs["random_state"]
-        )
-        nndescent_kwargs["metric"] = (
-            "cosine" if "metric" not in nndescent_kwargs else nndescent_kwargs["metric"]
-        )
-    return nndescent_kwargs
-
-
-
+    defaults = {
+        "compressed": True,
+        "n_neighbors": 30,
+        "random_state": 1234,
+        "metric": "cosine",
+    }
+    return defaults if nndescent_kwargs is None else {**defaults, **nndescent_kwargs}
