@@ -221,6 +221,41 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cached-embeddings" class="md-nav__link">
+    Cached Embeddings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approximate-nearest-neighbors-search" class="md-nav__link">
+    Approximate Nearest Neighbors Search
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search-ann-by-vector" class="md-nav__link">
+    Search ANN by Vector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#persistenceserialization" class="md-nav__link">
+    Persistence/Serialization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-to-2d-with-umap" class="md-nav__link">
+    Project to 2D with UMAP
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -276,6 +311,41 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cached-embeddings" class="md-nav__link">
+    Cached Embeddings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approximate-nearest-neighbors-search" class="md-nav__link">
+    Approximate Nearest Neighbors Search
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search-ann-by-vector" class="md-nav__link">
+    Search ANN by Vector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#persistenceserialization" class="md-nav__link">
+    Persistence/Serialization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-to-2d-with-umap" class="md-nav__link">
+    Project to 2D with UMAP
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -311,11 +381,11 @@
 <span class="c1"># project them in UMAP, use them as features in ML, etc</span>
 </code></pre></div>
 <p>Up until now, everything is pretty much the same as using <code>SentenceTransformers</code>. Now we'll look at what's unique about EmBuddy.</p>
-<p><strong>Cached Embeddings</strong></p>
+<h2 id="cached-embeddings">Cached Embeddings</h2>
 <p>Embeddings are cached within EmBuddy. If we run this again, it should be quite fast!</p>
 <div class="highlight"><pre><span></span><code><span class="n">embeddings</span> <span class="o">=</span> <span class="n">emb</span><span class="o">.</span><span class="n">embed</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;cleaned_hm&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
 </code></pre></div>
-<p><strong>Approximate Nearest Neighbors Search</strong></p>
+<h2 id="approximate-nearest-neighbors-search">Approximate Nearest Neighbors Search</h2>
 <p>We can use Approximate Nearest Neighbors (ANN) to do semantic search with the embeddings.</p>
 <div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Code</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="n">emb</span><span class="o">.</span><span class="n">build_ann_index</span><span class="p">()</span>
@@ -362,7 +432,7 @@
 </code></pre></div>
 </div>
 </div>
-<p><strong>Search ANN by Vector</strong></p>
+<h2 id="search-ann-by-vector">Search ANN by Vector</h2>
 <p>You can also search by vector. </p>
 <div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Code</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="n">dog_docs</span> <span class="o">=</span> <span class="p">[</span><span class="n">doc</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;cleaned_hm&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">if</span> <span class="s2">&quot;dog&quot;</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">]</span>
@@ -383,13 +453,19 @@
 </code></pre></div>
 </div>
 </div>
-<p><strong>Persistence/Serialization</strong></p>
+<h2 id="persistenceserialization">Persistence/Serialization</h2>
 <p>Done embedding for now but want to add more later?</p>
 <div class="highlight"><pre><span></span><code><span class="n">emb</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;myembeddings.emb&quot;</span><span class="p">)</span>
 
 <span class="c1"># some time later... </span>
 <span class="n">my_old_emb</span> <span class="o">=</span> <span class="n">EmBuddy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;myembeddings.emb&quot;</span><span class="p">)</span>
 <span class="n">my_old_emb</span><span class="o">.</span><span class="n">nearest_neighbors</span><span class="p">(</span><span class="s2">&quot;I made even better pudding!&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="project-to-2d-with-umap">Project to 2D with UMAP</h2>
+<div class="highlight"><pre><span></span><code><span class="n">umap_embeddings</span> <span class="o">=</span> <span class="n">emb</span><span class="o">.</span><span class="n">build_umap</span><span class="p">()</span>
+
+<span class="n">my_old_emb</span> <span class="o">=</span> <span class="n">EmBuddy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;myembeddings.emb&quot;</span><span class="p">)</span>
+<span class="n">umap_embeddings_loaded</span> <span class="o">=</span> <span class="n">my_old_emb</span><span class="o">.</span><span class="n">umap_embeddings</span>
 </code></pre></div>
                 
               

@@ -265,6 +265,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#src.embuddy.core.EmBuddy.build_umap" class="md-nav__link">
+    build_umap()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#src.embuddy.core.EmBuddy.embed" class="md-nav__link">
     embed()
   </a>
@@ -396,6 +403,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#src.embuddy.core.EmBuddy.build_umap" class="md-nav__link">
+    build_umap()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#src.embuddy.core.EmBuddy.embed" class="md-nav__link">
     embed()
   </a>
@@ -498,7 +512,7 @@
 
 
 
-<h2 id="src.embuddy.core.EmBuddy.__call__" class="doc doc-heading">
+<h2 class="doc doc-heading" id="src.embuddy.core.EmBuddy.__call__">
 <code class="highlight language-python"><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">docs</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
   <span class="doc doc-properties">
@@ -528,7 +542,7 @@
 
 
 
-<h2 id="src.embuddy.core.EmBuddy.__init__" class="doc doc-heading">
+<h2 class="doc doc-heading" id="src.embuddy.core.EmBuddy.__init__">
 <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model_name</span><span class="p">)</span></code>
 
   <span class="doc doc-properties">
@@ -575,6 +589,7 @@
         <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">get_sentence_embedding_dimension</span><span class="p">())</span>
     <span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">ann</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">NNDescent</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">umap_embeddings</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">_last_built_len</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
 </code></pre></div>
         </details>
@@ -588,7 +603,7 @@
 
 
 
-<h2 id="src.embuddy.core.EmBuddy.build_ann_index" class="doc doc-heading">
+<h2 class="doc doc-heading" id="src.embuddy.core.EmBuddy.build_ann_index">
 <code class="highlight language-python"><span class="n">build_ann_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nndescent_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 
@@ -675,7 +690,74 @@
 
 
 
-<h2 id="src.embuddy.core.EmBuddy.embed" class="doc doc-heading">
+<h2 class="doc doc-heading" id="src.embuddy.core.EmBuddy.build_umap">
+<code class="highlight language-python"><span class="n">build_umap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">umap_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_array</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Builds a 2D projection of the embeddings with UMAP
+default settings except metric="cosine".</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>umap_kwargs</code></td>
+        <td><code>Optional[Dict[str, Any]]</code></td>
+        <td><p>Custom UMAP kwargs. Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>return_array</code></td>
+        <td><code>bool</code></td>
+        <td><p>Return the UMAP array. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>embuddy/core.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">build_umap</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">umap_kwargs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">return_array</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Builds a 2D projection of the embeddings with UMAP</span>
+<span class="sd">    default settings except metric=&quot;cosine&quot;.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        umap_kwargs (Optional[Dict[str, Any]], optional): Custom UMAP kwargs. Defaults to None.</span>
+<span class="sd">        return_array (bool, optional): Return the UMAP array. Defaults to True.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">umap_kwargs</span> <span class="o">=</span> <span class="n">_build_umap_kwargs_dict</span><span class="p">(</span><span class="n">umap_kwargs</span><span class="p">)</span>
+    <span class="n">umap</span> <span class="o">=</span> <span class="n">UMAP</span><span class="p">(</span><span class="o">**</span><span class="n">umap_kwargs</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">umap_embeddings</span> <span class="o">=</span> <span class="n">umap</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">embedding_cache</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">return_array</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">umap_embeddings</span>
+    <span class="k">return</span> <span class="kc">None</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h2 class="doc doc-heading" id="src.embuddy.core.EmBuddy.embed">
 <code class="highlight language-python"><span class="n">embed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">docs</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 
@@ -777,7 +859,7 @@
 
 
 
-<h2 id="src.embuddy.core.EmBuddy.load" class="doc doc-heading">
+<h2 class="doc doc-heading" id="src.embuddy.core.EmBuddy.load">
 <code class="highlight language-python"><span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></code>
 
   <span class="doc doc-properties">
@@ -822,6 +904,9 @@
     <span class="n">embuddy</span> <span class="o">=</span> <span class="n">EmBuddy</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
     <span class="n">embuddy</span><span class="o">.</span><span class="n">doc_cache</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="s2">&quot;docs&quot;</span><span class="p">])</span>
     <span class="n">embuddy</span><span class="o">.</span><span class="n">embedding_cache</span> <span class="o">=</span> <span class="n">g</span><span class="p">[</span><span class="s2">&quot;embeddings&quot;</span><span class="p">][:]</span>
+    <span class="n">umap_check</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;umap_embeddings&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">umap_check</span><span class="p">:</span>
+        <span class="n">embuddy</span><span class="o">.</span><span class="n">umap_embeddings</span> <span class="o">=</span> <span class="n">g</span><span class="p">[</span><span class="s2">&quot;umap_embeddings&quot;</span><span class="p">]</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">path</span> <span class="o">/</span> <span class="s2">&quot;ann_index.zstd&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
         <span class="n">embuddy</span><span class="o">.</span><span class="n">ann</span> <span class="o">=</span> <span class="n">joblib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span> <span class="o">/</span> <span class="s2">&quot;ann_index.zstd&quot;</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">embuddy</span>
@@ -837,7 +922,7 @@
 
 
 
-<h2 id="src.embuddy.core.EmBuddy.nearest_neighbors" class="doc doc-heading">
+<h2 class="doc doc-heading" id="src.embuddy.core.EmBuddy.nearest_neighbors">
 <code class="highlight language-python"><span class="n">nearest_neighbors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">docs</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span></code>
 
 
@@ -965,7 +1050,7 @@ neighbors for each input doc. Sorted by distance.</p></td>
 
 
 
-<h2 id="src.embuddy.core.EmBuddy.nearest_neighbors_vector" class="doc doc-heading">
+<h2 class="doc doc-heading" id="src.embuddy.core.EmBuddy.nearest_neighbors_vector">
 <code class="highlight language-python"><span class="n">nearest_neighbors_vector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query_vector</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span></code>
 
 
@@ -1100,7 +1185,7 @@ neighbors for each input doc. Sorted by distance.</p></td>
 
 
 
-<h2 id="src.embuddy.core.EmBuddy.save" class="doc doc-heading">
+<h2 class="doc doc-heading" id="src.embuddy.core.EmBuddy.save">
 <code class="highlight language-python"><span class="n">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 
@@ -1179,6 +1264,8 @@ embeddings and a <code>docs</code> array of the docments</p></td>
     <span class="n">g</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;model_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_name</span>
     <span class="n">g</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;embeddings&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">embedding_cache</span><span class="p">)</span>
     <span class="n">g</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;docs&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">doc_cache</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">umap_embeddings</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">g</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;umap_embeddings&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">umap_embeddings</span><span class="p">)</span>
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ann</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ann</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">path</span> <span class="o">/</span> <span class="s2">&quot;ann_index.zstd&quot;</span><span class="p">),</span> <span class="n">compress</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;zstd&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">g</span>
@@ -1221,7 +1308,7 @@ embeddings and a <code>docs</code> array of the docments</p></td>
 
 
 
-<h2 id="src.embuddy.errors.IndexNotBuiltError" class="doc doc-heading">
+<h2 class="doc doc-heading" id="src.embuddy.errors.IndexNotBuiltError">
         <code>
 IndexNotBuiltError            (<span title="ValueError">ValueError</span>, <span title="AttributeError">AttributeError</span>)
         </code>
@@ -1247,7 +1334,7 @@ before the ANN index is built.</p>
 
 
 
-<h2 id="src.embuddy.errors.NNDescentHyperplaneError" class="doc doc-heading">
+<h2 class="doc doc-heading" id="src.embuddy.errors.NNDescentHyperplaneError">
         <code>
 NNDescentHyperplaneError            (<span title="Exception">Exception</span>)
         </code>
