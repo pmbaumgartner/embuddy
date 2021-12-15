@@ -28,7 +28,7 @@ embeddings = emb.embed(df["cleaned_hm"].tolist())
 
 Up until now, everything is pretty much the same as using `SentenceTransformers`. Now we'll look at what's unique about EmBuddy.
 
-**Cached Embeddings**
+## Cached Embeddings
 
 Embeddings are cached within EmBuddy. If we run this again, it should be quite fast!
 
@@ -36,7 +36,7 @@ Embeddings are cached within EmBuddy. If we run this again, it should be quite f
 embeddings = emb.embed(df["cleaned_hm"].tolist())
 ```
 
-**Approximate Nearest Neighbors Search**
+## Approximate Nearest Neighbors Search
 
 We can use Approximate Nearest Neighbors (ANN) to do semantic search with the embeddings.
 
@@ -92,7 +92,7 @@ Under the hood, we use [PyNNDescent](https://pynndescent.readthedocs.io/en/lates
     (4214, 'I brought my dog to the dog park for the first time. ', 0.2755207)]]
     ```
 
-**Search ANN by Vector**
+## Search ANN by Vector
 
 You can also search by vector. 
 
@@ -118,7 +118,7 @@ You can also search by vector.
     0.39648643)]
     ```
 
-**Persistence/Serialization**
+## Persistence/Serialization
 
 Done embedding for now but want to add more later?
 
@@ -130,7 +130,7 @@ my_old_emb = EmBuddy.load("myembeddings.emb")
 my_old_emb.nearest_neighbors("I made even better pudding!")
 ```
 
-**Project to 2D with UMAP**
+## Project to 2D with UMAP
 
 ```python
 umap_embeddings = emb.build_umap()
