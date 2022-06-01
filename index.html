@@ -364,9 +364,9 @@
 <p><code>embuddy</code> is a package that helps with using text embeddings for local data analysis.</p>
 <p>EmBuddy currently supports <a href="https://www.sbert.net/docs/pretrained_models.html">models</a> available through <code>SentenceTransformers</code>.</p>
 <h2 id="usage">Usage</h2>
-<p>We"ll look at a basic workflow with data from HappyDB.</p>
+<p>We'll look at a basic workflow with data from <a href="https://megagonlabs.github.io/HappyDB/">HappyDB</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">src.embuddy</span> <span class="kn">import</span> <span class="n">EmBuddy</span>
+<span class="kn">from</span> <span class="nn">embuddy</span> <span class="kn">import</span> <span class="n">EmBuddy</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
     <span class="s2">&quot;https://github.com/megagonlabs/HappyDB/raw/master/happydb/data/cleaned_hm.csv&quot;</span><span class="p">,</span>
