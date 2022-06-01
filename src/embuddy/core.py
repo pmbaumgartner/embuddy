@@ -172,8 +172,8 @@ class EmBuddy:
 
         Returns:
             List[List[Tuple[int, str, float]]]: For each document, a list of tuples
-            containing the document index, document string, and distance for the nearest
-            neighbors for each input doc. Sorted by distance.
+                containing the document index, document string, and distance for the nearest
+                neighbors for each input doc. Sorted by distance.
         """
         if self.ann is None or not isinstance(self.ann, NNDescent):
             raise IndexNotBuiltError(
@@ -224,8 +224,8 @@ class EmBuddy:
 
         Returns:
             List[List[Tuple[int, str, float]]]: For each vector, a list of tuples
-            containing the document index, document string, and distance for the nearest
-            neighbors for each input doc. Sorted by distance.
+                containing the document index, document string, and distance for the nearest
+                neighbors for each input doc. Sorted by distance.
         """
         if self.ann is None or not isinstance(self.ann, NNDescent):
             raise IndexNotBuiltError(
