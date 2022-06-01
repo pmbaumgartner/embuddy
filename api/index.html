@@ -912,8 +912,8 @@
 
 <span class="sd">        Returns:</span>
 <span class="sd">            List[List[Tuple[int, str, float]]]: For each document, a list of tuples</span>
-<span class="sd">            containing the document index, document string, and distance for the nearest</span>
-<span class="sd">            neighbors for each input doc. Sorted by distance.</span>
+<span class="sd">                containing the document index, document string, and distance for the nearest</span>
+<span class="sd">                neighbors for each input doc. Sorted by distance.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ann</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ann</span><span class="p">,</span> <span class="n">NNDescent</span><span class="p">):</span>
             <span class="k">raise</span> <span class="n">IndexNotBuiltError</span><span class="p">(</span>
@@ -964,8 +964,8 @@
 
 <span class="sd">        Returns:</span>
 <span class="sd">            List[List[Tuple[int, str, float]]]: For each vector, a list of tuples</span>
-<span class="sd">            containing the document index, document string, and distance for the nearest</span>
-<span class="sd">            neighbors for each input doc. Sorted by distance.</span>
+<span class="sd">                containing the document index, document string, and distance for the nearest</span>
+<span class="sd">                neighbors for each input doc. Sorted by distance.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ann</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ann</span><span class="p">,</span> <span class="n">NNDescent</span><span class="p">):</span>
             <span class="k">raise</span> <span class="n">IndexNotBuiltError</span><span class="p">(</span>
@@ -1656,19 +1656,9 @@ default settings except metric="cosine".</p>
           <td>
                 <code><span title="typing.List">List</span>[<span title="typing.List">List</span>[<span title="typing.Tuple">Tuple</span>[int, str, float]]]</code>
           </td>
-          <td><p>List[List[Tuple[int, str, float]]]: For each document, a list of tuples</p></td>
-        </tr>
-        <tr>
-          <td>
-                <code><span title="typing.List">List</span>[<span title="typing.List">List</span>[<span title="typing.Tuple">Tuple</span>[int, str, float]]]</code>
-          </td>
-          <td><p>containing the document index, document string, and distance for the nearest</p></td>
-        </tr>
-        <tr>
-          <td>
-                <code><span title="typing.List">List</span>[<span title="typing.List">List</span>[<span title="typing.Tuple">Tuple</span>[int, str, float]]]</code>
-          </td>
-          <td><p>neighbors for each input doc. Sorted by distance.</p></td>
+          <td><p>List[List[Tuple[int, str, float]]]: For each document, a list of tuples
+containing the document index, document string, and distance for the nearest
+neighbors for each input doc. Sorted by distance.</p></td>
         </tr>
     </tbody>
   </table>
@@ -1735,8 +1725,8 @@ default settings except metric="cosine".</p>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        List[List[Tuple[int, str, float]]]: For each document, a list of tuples</span>
-<span class="sd">        containing the document index, document string, and distance for the nearest</span>
-<span class="sd">        neighbors for each input doc. Sorted by distance.</span>
+<span class="sd">            containing the document index, document string, and distance for the nearest</span>
+<span class="sd">            neighbors for each input doc. Sorted by distance.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ann</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ann</span><span class="p">,</span> <span class="n">NNDescent</span><span class="p">):</span>
         <span class="k">raise</span> <span class="n">IndexNotBuiltError</span><span class="p">(</span>
@@ -1856,19 +1846,9 @@ to find the nearest neighbors for.</p></td>
           <td>
                 <code><span title="typing.List">List</span>[<span title="typing.List">List</span>[<span title="typing.Tuple">Tuple</span>[int, str, float]]]</code>
           </td>
-          <td><p>List[List[Tuple[int, str, float]]]: For each vector, a list of tuples</p></td>
-        </tr>
-        <tr>
-          <td>
-                <code><span title="typing.List">List</span>[<span title="typing.List">List</span>[<span title="typing.Tuple">Tuple</span>[int, str, float]]]</code>
-          </td>
-          <td><p>containing the document index, document string, and distance for the nearest</p></td>
-        </tr>
-        <tr>
-          <td>
-                <code><span title="typing.List">List</span>[<span title="typing.List">List</span>[<span title="typing.Tuple">Tuple</span>[int, str, float]]]</code>
-          </td>
-          <td><p>neighbors for each input doc. Sorted by distance.</p></td>
+          <td><p>List[List[Tuple[int, str, float]]]: For each vector, a list of tuples
+containing the document index, document string, and distance for the nearest
+neighbors for each input doc. Sorted by distance.</p></td>
         </tr>
     </tbody>
   </table>
@@ -1943,8 +1923,8 @@ to find the nearest neighbors for.</p></td>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        List[List[Tuple[int, str, float]]]: For each vector, a list of tuples</span>
-<span class="sd">        containing the document index, document string, and distance for the nearest</span>
-<span class="sd">        neighbors for each input doc. Sorted by distance.</span>
+<span class="sd">            containing the document index, document string, and distance for the nearest</span>
+<span class="sd">            neighbors for each input doc. Sorted by distance.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ann</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ann</span><span class="p">,</span> <span class="n">NNDescent</span><span class="p">):</span>
         <span class="k">raise</span> <span class="n">IndexNotBuiltError</span><span class="p">(</span>
