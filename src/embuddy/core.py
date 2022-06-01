@@ -32,16 +32,18 @@ class EmBuddy:
         self.umap_embeddings: Optional[np.ndarray] = None
         self._last_built_len: int = 0
 
-    def embed(self, docs: Union[str, List[str]], cache: bool = True) -> np.ndarray:
+    def embed(self, docs: Union[str, List[str]], cache: bool = True, show_progress_bar: bool = True) -> np.ndarray:
         """Embed documents.
 
         Args:
             docs (Union[str, List[str]]): A string or list of strings to embed
             cache (bool, optional): Whether to cache embedding results. Defaults to True.
+            show_progress_bar (bool, optional): Show progress bar for sentence-transformers. Defaults to True.
 
         Returns:
             np.ndarray: Embeddings of input documents.
         """
+        
         if isinstance(docs, str):
             docs = [docs]
 
@@ -54,7 +56,7 @@ class EmBuddy:
             if uncached_docs:
                 self.doc_cache.extend(uncached_docs)
                 uncached_embeddings = self.model.encode(
-                    uncached_docs, convert_to_numpy=True
+                    uncached_docs, show_progress_bar=show_progress_bar
                 )
                 self.embedding_cache = np.append(
                     self.embedding_cache, uncached_embeddings, axis=0
@@ -68,7 +70,7 @@ class EmBuddy:
                 for i, doc in enumerate(docs):
                     result[i] = self.embedding_cache[self.doc_cache.index(doc)]
         else:
-            result = self.model.encode(docs)
+            result = self.model.encode(docs, show_progress_bar=show_progress_bar)
         return result
 
     def __call__(self, docs: Union[str, List[str]], cache: bool = True) -> np.ndarray:
