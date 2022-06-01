@@ -132,7 +132,8 @@ class EmBuddy:
         """Builds the Approximate Nearest Neighbors (ANN) index
 
         Args:
-            nndescent_kwargs (Optional[Dict[str, Any]], optional): Optional kwargs to pass to NNDescent. Defaults to None.
+            nndescent_kwargs (Optional[Dict[str, Any]], optional): Optional kwargs to pass to NNDescent.
+                Defaults to None.
 
         Raises:
             NNDescentHyperplaneError: If ANN can't be built due to small data.
