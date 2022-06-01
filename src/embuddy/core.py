@@ -43,7 +43,6 @@ class EmBuddy:
         Returns:
             np.ndarray: Embeddings of input documents.
         """
-        
         if isinstance(docs, str):
             docs = [docs]
 
